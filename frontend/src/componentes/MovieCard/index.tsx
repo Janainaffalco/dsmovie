@@ -7,7 +7,7 @@ function MovieCard() {
 
     const movie = {
         id: 1,
-        image: "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
+        image: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/AweDlIiohqw4sjC7gCsPVd1zo77.jpg",
         title: "The Witcher",
         count: 2,
         score: 4.5
