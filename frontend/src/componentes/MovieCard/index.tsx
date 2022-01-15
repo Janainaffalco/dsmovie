@@ -1,17 +1,16 @@
 
 import MovieScore from "componentes/MovieScore";
     import { Link }  from "react-router-dom";
+import { Movie } from "types/movie";
 
+type Props = {
 
-function MovieCard() {
+    movie: Movie;
 
-    const movie = {
-        id: 1,
-        image: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/AweDlIiohqw4sjC7gCsPVd1zo77.jpg",
-        title: "Mulher Maravilha 1984",
-        count: 2,
-        score: 4.5
-    };
+}
+function MovieCard({ movie } : Props) {
+
+   
 
     return (
 
