@@ -1,7 +1,10 @@
+
+import  axios  from 'axios';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
+import { BASE_URL } from 'utils/requests';
 import './styles.css';
-function Form() {
 
 type Props = {
 
@@ -11,12 +14,22 @@ type Props = {
 
 function FormCard ( { movieId } : Props){
 
+    
+  const [ movie, setMovie] =  useState<Movie>();
 
+    useEffect(() =>{
+        axios.get(`${BASE_URL}/movies/${movieId}`)
+        .then(response => {
+            setMovie(response.data)
+        });
+    },[movieId]);
+
+  
      return (
         <div className="dsmovie-form-container">
-            <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.title} />
+            <img className="dsmovie-movie-card-image" src={movie?.image} alt={movie?.title} />
             <div className="dsmovie-card-bottom-container">
-                <h3>{movie.title}</h3>
+                <h3>{movie?.title}</h3>
                 <form className="dsmovie-form">
                     <div className="form-group dsmovie-form-group">
                         <label htmlFor="email">Informe seu email</label>
